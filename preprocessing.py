@@ -16,7 +16,7 @@ def strip_formatting(string: str):
     return string
 
 
-def split_data(reviews_path: str, training_data_path: str, test_data_path: str, percent: float):
+def split_data(reviews_path, training_data_path, test_data_path, percent: float):
     """
     Split the data from reviews_path into training_data_path and test_data_path according to percent value.
     """
@@ -45,7 +45,7 @@ def test_file_validity(path: str):
     return 0
 
 
-def print_results(n, p, r):
+def print_results(n: str, p: float, r: float):
     print("Number of samples\t" + str(n))
     print("Precision@{}\t\t{:.3f}".format(1, p))
     print("Recall@{}\t\t{:.3f}".format(1, r))
