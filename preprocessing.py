@@ -8,18 +8,14 @@ import os
 
 
 def strip_formatting(string: str):
-    """
-    Lower the string and separate words from punctuation.
-    """
+    """Lower the string and separate words from punctuation."""
     string = string.lower()
     string = re.sub(r"([.!?,'/()])", r" \1 ", string)
     return string
 
 
 def split_data(reviews_path, training_data_path, test_data_path, percent: float):
-    """
-    Split the data from reviews_path into training_data_path and test_data_path according to percent value.
-    """
+    """Split the data from reviews_path into training_data_path and test_data_path according to percent value."""
     with reviews_path.open() as input_file, \
             training_data_path.open("w") as train_output, test_data_path.open("w") as test_output:
         for line in input_file:
@@ -36,9 +32,7 @@ def split_data(reviews_path, training_data_path, test_data_path, percent: float)
 
 
 def test_file_validity(path: str):
-    """
-    Check path existence and if it leads to a file.
-    """
+    """Check path existence and if it leads to a file."""
     if os.path.exists(path):
         if os.path.isfile(path):
             return 1
@@ -53,9 +47,7 @@ def print_results(n: str, p: float, r: float):
 
 
 def training_process(training_data_path: str, test_data_path: str, model_path: str):
-    """
-    Create the model, save it, and display the model evaluation metrics on the test_data.
-    """
+    """Create the model, save it, and display the model evaluation metrics on the test_data."""
     model = fasttext.train_supervised(input=str(training_data_path), lr=1.0, epoch=25, wordNgrams=2,
                                       loss='hs', bucket=200000, dim=50)
     model.save_model(model_path)
@@ -66,9 +58,7 @@ def training_process(training_data_path: str, test_data_path: str, model_path: s
 
 
 def predict_rating(review: str, model_path: str):
-    """
-    Predict the rating of the review and print it.
-    """
+    """Predict the rating of the review and print it."""
     # Pre-process the review so it matches the training format
     preprocessed_review = strip_formatting(review)
 
