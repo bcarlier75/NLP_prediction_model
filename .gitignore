@@ -1,0 +1,5 @@
+# Directory for PyCharm
+.idea/
+
+# .txt generated
+.txt
