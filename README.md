@@ -18,6 +18,7 @@ Your directory structure should be according to these at the start of the main f
 However you can easily modify it.
 
 Here is the one I used :
+
 ![Directory structure](rcs/directory_struct.png)
 
 **Output example**:
