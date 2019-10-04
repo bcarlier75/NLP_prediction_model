@@ -14,7 +14,7 @@ Note: be careful about some characters like "!" for example, don't forget to use
 
 To replicate my model you will need to download the yelp JSON dataset available [here](https://www.yelp.com/dataset/download).
 
-Your directory structure should be according to these at the start of the main function in predict_review_rating.py.However you can easily modify it.
+Your directory structure should be according to these at the start of the main function in predict_review_rating.py. However you can easily modify it.
 
 Here is the one I used :
 
